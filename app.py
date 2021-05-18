@@ -197,10 +197,31 @@ import requests
 if __name__ == "__main__":
 
     
-
-
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
+    
+    auth_token=Channel_Access_Token
+    hed = {'Authorization': 'Bearer ' + auth_token}
+    data = {
+        "messages":[
+            {
+                "type":"text",
+                "text":"Hello, world1"
+            },
+            {
+                "type":"text",
+                "text":"Hello, world2"
+            }
+        ]
+    }
+
+    url = 'https://api.line.me/v2/bot/message/broadcast'
+    response = requests.post(url, json=data, headers=hed)
+    print(response)
+    print(response.json())
+
+
 
     
 
