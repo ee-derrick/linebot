@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "D:\\Anaconda3\\envs\\OpencvTest\\python.exe"
+  "python.pythonPath": "D:\\Anaconda3\\envs\\OpencvTest\\python.exe",
+
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

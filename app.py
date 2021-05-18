@@ -42,22 +42,22 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 
 ## RB JOK
 # Channel Access Token
-#line_bot_api = LineBotApi('YcqixOuILYduL5xwR20RHFRW8q9Wgf+Zxd+DjxC2zj2NG5kNEHJTBlODaBZOCsP3R1ilmm8XF3FCLbpIis/TqaPhou0Eh2kzcd7HBdmABY9yRtrq2k46yZm+vdFTTG6npTPANjzQzlT8sgzaHFoSkgdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('YcqixOuILYduL5xwR20RHFRW8q9Wgf+Zxd+DjxC2zj2NG5kNEHJTBlODaBZOCsP3R1ilmm8XF3FCLbpIis/TqaPhou0Eh2kzcd7HBdmABY9yRtrq2k46yZm+vdFTTG6npTPANjzQzlT8sgzaHFoSkgdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-#handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
+handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
 
 # RB DDD
 # Channel Access Token
-line_bot_api = LineBotApi('UTA0U6Wsg0el+sPXHDYAzgC0vndoBg1+Ai53hGEnM6xs1f5eh/NNf0TcQKVUqwgdjF2UcHRLSMr7bY/Hjl74L8RocS7uYtD27Z7pbOQ5E1PkJ29qQSmYgFluhMzyBchuTJHqXHdQsqJUf49Aa1gJbQdB04t89/1O/w1cDnyilFU=')
+#line_bot_api = LineBotApi('UTA0U6Wsg0el+sPXHDYAzgC0vndoBg1+Ai53hGEnM6xs1f5eh/NNf0TcQKVUqwgdjF2UcHRLSMr7bY/Hjl74L8RocS7uYtD27Z7pbOQ5E1PkJ29qQSmYgFluhMzyBchuTJHqXHdQsqJUf49Aa1gJbQdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('afe0107e68034bbd7d4fd768ff9447f1')
+#handler = WebhookHandler('afe0107e68034bbd7d4fd768ff9447f1')
 
 
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
-
+    
     print("我被post了")
 
     # get X-Line-Signature header value
@@ -78,14 +78,12 @@ def callback():
     return 'OK'
 
 
-
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
     
 
-    
     
     ###
     listall = api.list_positions(api.stock_account)

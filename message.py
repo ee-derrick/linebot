@@ -9,8 +9,10 @@ def imagemap_message():
         base_url="https://i.imgur.com/BfTFVDN.jpg",
         alt_text='最新的合作廠商有誰呢？',
         base_size=BaseSize(height=2000, width=2000),
+
+
         actions=[
-            URIImagemapAction(
+            URIImagemapAction(  
                 #家樂福
                 link_uri="https://tw.shop.com/search/%E5%AE%B6%E6%A8%82%E7%A6%8F",
                 area=ImagemapArea(
