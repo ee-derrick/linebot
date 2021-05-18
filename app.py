@@ -26,12 +26,14 @@ import time
 #
 import shioaji as sj
 
+'''
 api = sj.Shioaji()
 v = api.login(
     person_id="R124279806", 
     passwd="jindeyf00", 
     contracts_cb=lambda security_type: print(f"{repr(security_type)} fetch done.")
 )
+'''
 
 #
 app = Flask(__name__)
@@ -75,8 +77,10 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    
 
-
+    
+    '''
     ###
     listall = api.list_positions(api.stock_account)
     sum=0
@@ -92,7 +96,6 @@ def handle_message(event):
         if(i['code']=='3669'):
             v3669=i
 
-     
     #
     contracts = [api.Contracts.Stocks['8044']]
     v8044ingL = api.snapshots(contracts)
@@ -115,6 +118,7 @@ def handle_message(event):
     print('華新科:2492 成本= ',v2492['price'],"現價= ",v2492ing,'損益: ',v2492['pnl'])
 
     print('總損益 ',sum)
+    '''
 
 
     ###
@@ -132,7 +136,7 @@ def handle_message(event):
 
     elif '旋轉木馬' in msg:
         message = Carousel_Template()
-        line_bot_api.reply_message(event.reply_token, sum)
+        line_bot_api.reply_message(event.reply_token, "123321")
 
     elif '圖片畫廊' in msg:
         message = test()
