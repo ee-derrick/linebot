@@ -79,6 +79,28 @@ except LineBotApiError as e:
 
 #-------------
 
+auth_token='Channel_Access_Token'
+hed = {'Authorization': 'Bearer ' + auth_token}
+data = {
+    "messages":[
+        {
+            "type":"text",
+            "text":"Hello, world1"
+        },
+        {
+            "type":"text",
+            "text":"Hello, world2"
+        }
+    ]
+}
+
+url = 'https://api.line.me/v2/bot/message/broadcast'
+response = requests.post(url, json=data, headers=hed)
+print(response)
+print(response.json())
+
+
+
 
 
 # 監聽所有來自 /callback 的 Post Request
@@ -209,6 +231,8 @@ def handle_message(event):
 
 
 import os
+import requests
+
 if __name__ == "__main__":
 
     
