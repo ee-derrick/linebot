@@ -162,6 +162,14 @@ def handle_message(event):
         message = TextSendMessage(text=str1+'\n'+str2+'\n'+str3+'\n')
         line_bot_api.reply_message(event.reply_token, message)
 
+    elif '5' in msg:
+        message = TextSendMessage(text=str(sum))
+        line_bot_api.reply_message(event.reply_token, message)
+
+    elif '6' in msg:
+        message = TextSendMessage(text=str(sum-v2492['pnl']))
+        line_bot_api.reply_message(event.reply_token, message)
+
     ###
     elif '最新合作廠商' in msg:
         message = imagemap_message()
