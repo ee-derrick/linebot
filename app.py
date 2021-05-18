@@ -113,13 +113,15 @@ def handle_message(event):
     #print(v3669ing)
 
     #
-    #str1='網家:8044 成本= '+v8044['price']+"現價= "+v8044ing+'損益: '+v8044['pnl']
-    #str2='圓展:3669 成本= '+v3669['price']+"現價= "+v3669ing+'損益: '+v3669['pnl']
-    #str3='華新科:2492 成本= '+v2492['price']+"現價= "+v2492ing+'損益: '+v2492['pnl']
+    str1='網家:8044 成本= '+v8044['price']+"現價= "+v8044ing+'損益: '+v8044['pnl']
+    str2='圓展:3669 成本= '+v3669['price']+"現價= "+v3669ing+'損益: '+v3669['pnl']
+    str3='華新科:2492 成本= '+v2492['price']+"現價= "+v2492ing+'損益: '+v2492['pnl']
 
+    '''
     str1='網家:8044 成本= '
     str2='圓展:3669 成本= '
     str3='華新科:2492 成本= '
+    '''
 
     print('網家:8044 成本= ',v8044['price'],"現價= ",v8044ing,'損益: ',v8044['pnl'])
     print('圓展:3669 成本= ',v3669['price'],"現價= ",v3669ing,'損益: ',v3669['pnl'])
@@ -131,15 +133,15 @@ def handle_message(event):
 
     ###
     if '1' in msg:
-        message = TextSendMessage(text="str1")
+        message = TextSendMessage(text=str1)
         line_bot_api.reply_message(event.reply_token, message)
 
     elif '2' in msg:
-        message = TextSendMessage(text="str2")
+        message = TextSendMessage(text=str2)
         line_bot_api.reply_message(event.reply_token, message)
 
     elif '3' in msg:
-        message = TextSendMessage(text="str3")
+        message = TextSendMessage(text=str3)
         line_bot_api.reply_message(event.reply_token, message)
 
     ###
