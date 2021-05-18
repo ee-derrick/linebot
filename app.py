@@ -48,7 +48,6 @@ handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
 
 
 
-
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -61,7 +60,7 @@ def callback():
     # get request body as text
     body = request.get_data(as_text=True)
     
-    print("body=",body)
+    print("body= ",body)
 
     app.logger.info("Request body: " + body)
 
