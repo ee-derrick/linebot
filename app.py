@@ -26,14 +26,14 @@ import time
 #
 import shioaji as sj
 
-'''
+#'''
 api = sj.Shioaji()
 v = api.login(
     person_id="R124279806", 
     passwd="jindeyf00", 
     contracts_cb=lambda security_type: print(f"{repr(security_type)} fetch done.")
 )
-'''
+#'''
 
 #
 app = Flask(__name__)
@@ -80,7 +80,7 @@ def handle_message(event):
     
 
     
-    '''
+    
     ###
     listall = api.list_positions(api.stock_account)
     sum=0
@@ -118,7 +118,7 @@ def handle_message(event):
     print('華新科:2492 成本= ',v2492['price'],"現價= ",v2492ing,'損益: ',v2492['pnl'])
 
     print('總損益 ',sum)
-    '''
+    
 
 
     ###
