@@ -126,18 +126,6 @@ def handle_message(event):
     str1='網家:8044 成本= '+vd8044+"現價= "+v8044ing+'損益: '+vdc8044
     str2='圓展:3669 成本= '+vd3669+"現價= "+v3669ing+'損益: '+vdc3669
     str3='華新科:2492 成本= '+vd2492+"現價= "+v2492ing+'損益: '+vdc2492
-
-    '''
-    str1='網家:8044 成本= '
-    str2='圓展:3669 成本= '
-    str3='華新科:2492 成本= '
-    '''
-
-    '''
-    print('網家:8044 成本= ',v8044['price'],"現價= ",v8044ing,'損益: ',v8044['pnl'])
-    print('圓展:3669 成本= ',v3669['price'],"現價= ",v3669ing,'損益: ',v3669['pnl'])
-    print('華新科:2492 成本= ',v2492['price'],"現價= ",v2492ing,'損益: ',v2492['pnl'])
-    '''
     
     print(str1)
     print(str2)
@@ -186,7 +174,6 @@ def handle_message(event):
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
-
 
 
 import os
