@@ -24,7 +24,6 @@ import datetime
 import time
 #======python的函數庫==========
 
-
 #
 import shioaji as sj
 
@@ -57,6 +56,27 @@ handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
 #line_bot_api = LineBotApi('UTA0U6Wsg0el+sPXHDYAzgC0vndoBg1+Ai53hGEnM6xs1f5eh/NNf0TcQKVUqwgdjF2UcHRLSMr7bY/Hjl74L8RocS7uYtD27Z7pbOQ5E1PkJ29qQSmYgFluhMzyBchuTJHqXHdQsqJUf49Aa1gJbQdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 #handler = WebhookHandler('afe0107e68034bbd7d4fd768ff9447f1')
+
+
+
+
+
+#-------------
+
+from linebot import LineBotApi
+from linebot.models import TextSendMessage
+from linebot.exceptions import LineBotApiError
+
+#
+line_bot_api = LineBotApi(Channel_Access_Token)
+try:
+    line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
+except LineBotApiError as e:
+    # error handle
+    print("error")
+
+
+#-------------
 
 
 
@@ -185,25 +205,17 @@ def handle_message(event):
 
 
 
-from linebot import LineBotApi
-from linebot.models import TextSendMessage
-from linebot.exceptions import LineBotApiError
-
-
 
 
 import os
 if __name__ == "__main__":
+
+    
+
+
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
 
-    #
-    line_bot_api = LineBotApi(Channel_Access_Token)
-    try:
-        line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
-    except LineBotApiError as e:
-        # error handle
-        print("error")
     
 
 
