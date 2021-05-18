@@ -123,10 +123,16 @@ def handle_message(event):
     str3='華新科:2492 成本= '
     '''
 
+    '''
     print('網家:8044 成本= ',v8044['price'],"現價= ",v8044ing,'損益: ',v8044['pnl'])
     print('圓展:3669 成本= ',v3669['price'],"現價= ",v3669ing,'損益: ',v3669['pnl'])
     print('華新科:2492 成本= ',v2492['price'],"現價= ",v2492ing,'損益: ',v2492['pnl'])
-
+    '''
+    
+    print(str1)
+    print(str2)
+    print(str3)
+    
     print('總損益 ',sum)
     
 
