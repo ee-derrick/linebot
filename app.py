@@ -127,15 +127,15 @@ def handle_message(event):
 
     ###
     if '1' in msg:
-        message = TextSendMessage(text=str1)
+        message = TextSendMessage(text="str1")
         line_bot_api.reply_message(event.reply_token, message)
 
     elif '2' in msg:
-        message = TextSendMessage(text=str2)
+        message = TextSendMessage(text="str2")
         line_bot_api.reply_message(event.reply_token, message)
 
     elif '3' in msg:
-        message = TextSendMessage(text=str3)
+        message = TextSendMessage(text="str3")
         line_bot_api.reply_message(event.reply_token, message)
 
     ###
