@@ -91,31 +91,37 @@ def handle_message(event):
 
         if(i['code']=='8044'):
             v8044=i
+            vd8044=str(v8044['price'])
+            vdc8044=str(v8044['pnl'])
         if(i['code']=='2492'):
             v2492=i
+            vd2492=str(v2492['price'])
+            vdc2492=str(v2492['pnl'])
         if(i['code']=='3669'):
             v3669=i
+            vd3669=str(v3669['price'])
+            vdc3669=str(v3669['pnl'])
 
     #
     contracts = [api.Contracts.Stocks['8044']]
     v8044ingL = api.snapshots(contracts)
-    v8044ing=v8044ingL[0]['buy_price']
+    v8044ing=str(v8044ingL[0]['buy_price'])
     #print(v8044ing)
 
     contracts = [api.Contracts.Stocks['2492']]
     v2492ingL = api.snapshots(contracts)
-    v2492ing=v2492ingL[0]['buy_price']
+    v2492ing=str(v2492ingL[0]['buy_price'])
     #print(v2492ing)
 
     contracts = [api.Contracts.Stocks['3669']]
     v3669ingL = api.snapshots(contracts)
-    v3669ing=v3669ingL[0]['buy_price']
+    v3669ing=str(v3669ingL[0]['buy_price'])
     #print(v3669ing)
 
     #
-    str1='網家:8044 成本= '+v8044['price']+"現價= "+v8044ing+'損益: '+v8044['pnl']
-    str2='圓展:3669 成本= '+v3669['price']+"現價= "+v3669ing+'損益: '+v3669['pnl']
-    str3='華新科:2492 成本= '+v2492['price']+"現價= "+v2492ing+'損益: '+v2492['pnl']
+    str1='網家:8044 成本= '+vd8044+"現價= "+v8044ing+'損益: '+vdc8044
+    str2='圓展:3669 成本= '+vd3669+"現價= "+v3669ing+'損益: '+vdc3669
+    str3='華新科:2492 成本= '+vd2492+"現價= "+v2492ing+'損益: '+vdc2492
 
     '''
     str1='網家:8044 成本= '
