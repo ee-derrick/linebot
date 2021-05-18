@@ -11,6 +11,7 @@ from linebot.models import *
 
 
 
+
 #======這裡是呼叫的檔案內容=====
 from message import *
 from new import *
@@ -40,11 +41,16 @@ v = api.login(
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 
+
+
+Channel_Access_Token='YcqixOuILYduL5xwR20RHFRW8q9Wgf+Zxd+DjxC2zj2NG5kNEHJTBlODaBZOCsP3R1ilmm8XF3FCLbpIis/TqaPhou0Eh2kzcd7HBdmABY9yRtrq2k46yZm+vdFTTG6npTPANjzQzlT8sgzaHFoSkgdB04t89/1O/w1cDnyilFU='
 ## RB JOK
 # Channel Access Token
 line_bot_api = LineBotApi('YcqixOuILYduL5xwR20RHFRW8q9Wgf+Zxd+DjxC2zj2NG5kNEHJTBlODaBZOCsP3R1ilmm8XF3FCLbpIis/TqaPhou0Eh2kzcd7HBdmABY9yRtrq2k46yZm+vdFTTG6npTPANjzQzlT8sgzaHFoSkgdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
+
+
 
 # RB DDD
 # Channel Access Token
@@ -176,9 +182,28 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
 
 
+
+
+
+from linebot import LineBotApi
+from linebot.models import TextSendMessage
+from linebot.exceptions import LineBotApiError
+
+
+
+
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
+    #
+    line_bot_api = LineBotApi(Channel_Access_Token)
+    try:
+        line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
+    except LineBotApiError as e:
+        # error handle
+        print("error")
+    
 
 
