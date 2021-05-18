@@ -37,11 +37,17 @@ handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
 def callback():
 
     print("我被post了")
+
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
+
     # get request body as text
     body = request.get_data(as_text=True)
+    
+    print("body=",body)
+
     app.logger.info("Request body: " + body)
+
     # handle webhook body
     try:
         handler.handle(body, signature)
@@ -55,24 +61,31 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+
     if '最新合作廠商' in msg:
         message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
+
     elif '最新活動訊息' in msg:
         message = buttons_message()
         line_bot_api.reply_message(event.reply_token, message)
+
     elif '註冊會員' in msg:
         message = Confirm_Template()
         line_bot_api.reply_message(event.reply_token, message)
+
     elif '旋轉木馬' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
+
     elif '圖片畫廊' in msg:
         message = test()
         line_bot_api.reply_message(event.reply_token, message)
+
     elif '功能列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
+        
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
