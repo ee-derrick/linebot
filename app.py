@@ -62,45 +62,6 @@ handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
 
 
 
-#-------------
-'''
-from linebot import LineBotApi
-from linebot.models import TextSendMessage
-from linebot.exceptions import LineBotApiError
-
-#
-line_bot_api = LineBotApi(Channel_Access_Token)
-try:
-    line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
-except LineBotApiError as e:
-    # error handle
-    print("error")
-'''
-
-#-------------
-
-auth_token='Channel_Access_Token'
-hed = {'Authorization': 'Bearer ' + auth_token}
-data = {
-    "messages":[
-        {
-            "type":"text",
-            "text":"Hello, world1"
-        },
-        {
-            "type":"text",
-            "text":"Hello, world2"
-        }
-    ]
-}
-
-url = 'https://api.line.me/v2/bot/message/broadcast'
-response = requests.post(url, json=data, headers=hed)
-print(response)
-print(response.json())
-
-
-
 
 
 # 監聽所有來自 /callback 的 Post Request
@@ -244,3 +205,42 @@ if __name__ == "__main__":
     
 
 
+#-------------
+'''
+from linebot import LineBotApi
+from linebot.models import TextSendMessage
+from linebot.exceptions import LineBotApiError
+
+#
+line_bot_api = LineBotApi(Channel_Access_Token)
+try:
+    line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
+except LineBotApiError as e:
+    # error handle
+    print("error")
+'''
+
+
+
+#-------------
+'''
+auth_token=Channel_Access_Token
+hed = {'Authorization': 'Bearer ' + auth_token}
+data = {
+    "messages":[
+        {
+            "type":"text",
+            "text":"Hello, world1"
+        },
+        {
+            "type":"text",
+            "text":"Hello, world2"
+        }
+    ]
+}
+
+url = 'https://api.line.me/v2/bot/message/broadcast'
+response = requests.post(url, json=data, headers=hed)
+print(response)
+print(response.json())
+'''
