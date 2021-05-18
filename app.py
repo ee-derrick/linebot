@@ -43,9 +43,10 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 
 
 Channel_Access_Token='YcqixOuILYduL5xwR20RHFRW8q9Wgf+Zxd+DjxC2zj2NG5kNEHJTBlODaBZOCsP3R1ilmm8XF3FCLbpIis/TqaPhou0Eh2kzcd7HBdmABY9yRtrq2k46yZm+vdFTTG6npTPANjzQzlT8sgzaHFoSkgdB04t89/1O/w1cDnyilFU='
+
 ## RB JOK
 # Channel Access Token
-line_bot_api = LineBotApi('YcqixOuILYduL5xwR20RHFRW8q9Wgf+Zxd+DjxC2zj2NG5kNEHJTBlODaBZOCsP3R1ilmm8XF3FCLbpIis/TqaPhou0Eh2kzcd7HBdmABY9yRtrq2k46yZm+vdFTTG6npTPANjzQzlT8sgzaHFoSkgdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(Channel_Access_Token)
 # Channel Secret
 handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
 
