@@ -62,7 +62,7 @@ handler = WebhookHandler('21fead04f5a568736230dd83e25ca8cf')
 
 
 #-------------
-
+'''
 from linebot import LineBotApi
 from linebot.models import TextSendMessage
 from linebot.exceptions import LineBotApiError
@@ -74,7 +74,7 @@ try:
 except LineBotApiError as e:
     # error handle
     print("error")
-
+'''
 
 #-------------
 
