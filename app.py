@@ -93,8 +93,6 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     
-
-    
     ###
     listall = api.list_positions(api.stock_account)
     sum=0
