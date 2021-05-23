@@ -178,6 +178,8 @@ def image_carousel_message1():
         alt_text='圖片旋轉木馬',
         template=ImageCarouselTemplate(
             columns=[
+
+                
                 ImageCarouselColumn(
                     #image_url="https://i.imgur.com/uKYgfVs.jpg",
                     image_url="https://i.imgur.com/72nKPF9.jpg",

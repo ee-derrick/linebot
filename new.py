@@ -8,6 +8,9 @@ def test():
         alt_text='圖片旋轉木馬',
         template=ImageCarouselTemplate(
             columns=[
+
+                
+                '''
                 ImageCarouselColumn(
                     image_url="https://i.imgur.com/uKYgfVs.jpg",
                     action=URITemplateAction(
@@ -15,6 +18,26 @@ def test():
                         uri="http://img.juimg.com/tuku/yulantu/110709/222-110F91G31375.jpg"
                     )
                 ),
+                '''
+                
+                ImageCarouselColumn(
+                    #image_url="https://i.imgur.com/uKYgfVs.jpg",
+                    image_url="https://i.imgur.com/72nKPF9.jpg",
+                    action=URITemplateAction(
+                        label="新陌生人1",
+                        uri="https://i.imgur.com/72nKPF9.jpg"
+                    )
+                ),
+
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/1RGJ8Jf.jpg",
+                    action=URITemplateAction(
+                        label="新陌生人2",
+                        uri="https://i.imgur.com/1RGJ8Jf.jpg"
+                    )
+                ),
+
+
                 ImageCarouselColumn(
                     image_url="https://i.imgur.com/QOcAvjt.jpg",
                     action=URITemplateAction(
@@ -36,7 +59,11 @@ def test():
                         uri="https://m-miya.net/wp-content/uploads/2014/07/0-065-1.min_.jpg"
                     )
                 )
+
+
             ]
+
+
         )
     )
     return message
