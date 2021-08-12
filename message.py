@@ -1,15 +1,16 @@
 #這些是LINE官方開放的套件組合透過import來套用這個檔案上
+
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
+
     message = ImagemapSendMessage(
         base_url="https://i.imgur.com/BfTFVDN.jpg",
         alt_text='最新的合作廠商有誰呢？',
         base_size=BaseSize(height=2000, width=2000),
-
 
         actions=[
             URIImagemapAction(  
@@ -103,8 +104,11 @@ def Confirm_Template():
     )
     return message
 
-#旋轉木馬按鈕訊息介面
 
+
+
+
+#旋轉木馬按鈕訊息介面
 def Carousel_Template():
     message = TemplateSendMessage(
         alt_text='一則旋轉木馬按鈕訊息',
@@ -179,23 +183,6 @@ def image_carousel_message1():
         template=ImageCarouselTemplate(
             columns=[
 
-                
-                ImageCarouselColumn(
-                    #image_url="https://i.imgur.com/uKYgfVs.jpg",
-                    image_url="https://i.imgur.com/72nKPF9.jpg",
-                    action=URITemplateAction(
-                        label="新陌生人1",
-                        uri="https://i.imgur.com/72nKPF9.jpg"
-                    )
-                ),
-                ImageCarouselColumn(
-                    image_url="https://i.imgur.com/1RGJ8Jf.jpg",
-                    action=URITemplateAction(
-                        label="新陌生人2",
-                        uri="https://i.imgur.com/1RGJ8Jf.jpg"
-                    )
-                ),
-
                 ImageCarouselColumn(
                     image_url="https://i.imgur.com/QOcAvjt.jpg",
                     action=URITemplateAction(
@@ -217,9 +204,141 @@ def image_carousel_message1():
                         uri="https://m-miya.net/wp-content/uploads/2014/07/0-065-1.min_.jpg"
                     )
                 )
+                
             ]
         )
     )
     return message
 
 #關於LINEBOT聊天內容範例
+
+
+##
+def test():
+    message = TemplateSendMessage(
+        alt_text='圖片旋轉木馬',
+        template=ImageCarouselTemplate(
+            columns=[
+
+                #
+                ImageCarouselColumn(
+                
+                    #image_url="https://i.imgur.com/uKYgfVs.jpg",
+                    #image_url="https://i.imgur.com/72nKPF9.jpg",
+                
+                    image_url="https://i.imgur.com/TCe95ZZ.jpg",
+                    action=URITemplateAction(
+                        label="新陌生人1",
+                        uri="https://i.imgur.com/TCe95ZZ.jpg"
+                    )
+                ),
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/uBVDlAz.png",
+                    action=URITemplateAction(
+                        label="新陌生人2",
+                        uri="https://i.imgur.com/uBVDlAz.png"
+                    )
+                ),
+
+                #
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/QOcAvjt.jpg",
+                    action=URITemplateAction(
+                        label="新鮮蔬菜",
+                        uri="https://cdn.101mediaimage.com/img/file/1410464751urhp5.jpg"
+                    )
+                ),
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/Np7eFyj.jpg",
+                    action=URITemplateAction(
+                        label="可愛狗狗",
+                        uri="http://imgm.cnmo-img.com.cn/appimg/screenpic/big/674/673928.JPG"
+                    )
+                ),
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/QRIa5Dz.jpg",
+                    action=URITemplateAction(
+                        label="可愛貓咪",
+                        uri="https://m-miya.net/wp-content/uploads/2014/07/0-065-1.min_.jpg"
+                    )
+                )
+
+
+            ]
+
+
+        )
+    )
+    return message
+
+###
+def test2():
+    message = TemplateSendMessage(
+
+        alt_text='功能列表',
+        template=CarouselTemplate(
+
+            columns=[
+              
+                CarouselColumn(
+
+                    thumbnail_image_url='https://avatars.githubusercontent.com/u/55469294?v=4',
+                    
+                    title='EE303',
+                    text='NTUST',
+                    
+                    actions=[
+                        MessageTemplateAction(
+                            label='label txt',
+                            text='1'
+                        )
+                    ]
+
+                )
+
+
+            ]
+
+
+        )
+    )
+    return message
+
+
+
+def test3(texts):
+    message = TemplateSendMessage(
+
+        alt_text='功能列表',
+        template=CarouselTemplate(
+
+            columns=[
+              
+                CarouselColumn(
+
+                    thumbnail_image_url='https://avatars.githubusercontent.com/u/55469294?v=4',
+                    
+                    title='EE303',
+                    #text='NTUST',
+                    text=texts,
+                    
+                    actions=[
+                        MessageTemplateAction(
+                            label='label txt 1',
+                            text='1'
+                        ),
+                        MessageTemplateAction(
+                            label='label txt 2',
+                            text='2'
+                        ),
+                    ]
+
+                )
+
+
+            ]
+
+
+        )
+    )
+    return message
